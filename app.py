@@ -3,7 +3,7 @@ import gradio as gr
 from backend.text_to_tgt import src_txt_to_eng_translator
 from backend.audio_to_tgt import src_audio_to_eng_translator
 from backend.image_to_tgt import src_image_to_eng_translator
-from backend.video_to_tgt import src_video_to_eng_translator
+# from backend.video_to_tgt import src_video_to_eng_translator
 
 heading_txt = "Text-to-English"
 description_txt = '''Enter text in any language, and get the translation in English.'''
