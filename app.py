@@ -23,7 +23,7 @@ description_image = "Upload an image to extract text and translate it to English
 
 image_interface = gr.Interface(
     fn=src_image_to_eng_translator,
-    inputs=gr.Image(label="Upload an Image", type="file"),  
+    inputs=gr.Image(label="Upload an Image", type="filepath"),  
     outputs=gr.Textbox(label="Translated Text in English"),
     title="Image Text Extractor and Translator",
     description=description_image,
@@ -34,7 +34,7 @@ description_audio = "Upload an audio file to extract text and translate it to En
 
 audio_interface = gr.Interface(
     fn=src_audio_to_eng_translator,
-    inputs=gr.Audio(label="Upload an Audio file", type="file"),  
+    inputs=gr.Audio(label="Upload an Audio file", type="filepath"),  
     outputs=gr.Textbox(label="Translated Text in English"),
     title=heading_audio,
     description=description_audio
