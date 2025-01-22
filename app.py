@@ -11,7 +11,7 @@ description_txt = '''Enter text in any language, and get the translation in Engl
 txt_interface = gr.Interface(
     fn=src_txt_to_eng_translator,
     inputs=[
-        gr.Textbox(label="Playlist Link"),
+        gr.Textbox(label="Text Input"),
     ],
     outputs=gr.Textbox(label="Translation"),
     title=heading_txt,
