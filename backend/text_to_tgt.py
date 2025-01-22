@@ -1,4 +1,5 @@
 from deep_translator import GoogleTranslator
 
 def src_txt_to_eng_translator(input_text):
-    return "Random"
+    translated = GoogleTranslator(source='auto', target='en').translate(input)
+    return translated
