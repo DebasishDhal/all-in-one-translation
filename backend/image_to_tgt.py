@@ -4,7 +4,6 @@
 #     return "Random"
 from deep_translator import GoogleTranslator
 import pytesseract
-from PIL import image
 
 language_dict = {'English': 'eng', 'French': 'fra', 'Odia': 'ori', 'Hindi': 'hin',
                  'Bengali': 'ben', 'Telugu': 'tel', 'Hindi': 'hin', 'Malayalam': 'mal',
