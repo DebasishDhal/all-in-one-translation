@@ -32,7 +32,7 @@ image_interface = gr.Interface(
     outputs=[
         gr.Textbox(label="Image Text"),
         gr.Textbox(label="Translated Text")
-    ],,
+    ],
     title="Image Text Extractor and Translator",
     description=description_image,
 )
