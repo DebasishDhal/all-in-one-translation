@@ -3,7 +3,7 @@ title: All In One Translation
 emoji: 📚
 colorFrom: gray
 colorTo: green
-sdk: gradio
+sdk: docker
 sdk_version: 5.12.0
 app_file: app.py
 pinned: false
