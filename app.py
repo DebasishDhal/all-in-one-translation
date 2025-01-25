@@ -27,7 +27,10 @@ image_interface = gr.Interface(
     fn=src_image_to_eng_translator,
     inputs=[
         gr.Image(label="Upload an Image", type="filepath"),  
-        gr.Dropdown(choices=sorted_languages, label="Select Language", default='English')
+        gr.Dropdown(choices=sorted_languages, 
+                    label="Select Language", 
+                    # default='English'
+                   )
     ],  
     outputs=[
         gr.Textbox(label="Image Text"),
