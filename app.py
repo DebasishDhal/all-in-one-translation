@@ -2,7 +2,7 @@ import gradio as gr
 
 from backend.text_to_tgt import src_txt_to_eng_translator
 from backend.audio_to_tgt import src_audio_to_eng_translator
-from backend.image_to_tgt import src_image_to_eng_translator
+from backend.image_to_tgt import src_image_to_eng_translator, language_dict
 # from backend.video_to_tgt import src_video_to_eng_translator
 
 heading_txt = "Text-to-English"
@@ -21,10 +21,18 @@ txt_interface = gr.Interface(
 heading_image = "Image-to-English"
 description_image = "Upload an image to extract text and translate it to English."
 
+sorted_languages = sorted(language_dict.keys())
+
 image_interface = gr.Interface(
     fn=src_image_to_eng_translator,
-    inputs=gr.Image(label="Upload an Image", type="filepath"),  
-    outputs=gr.Textbox(label="Translated Text in English"),
+    inputs=[
+        gr.Image(label="Upload an Image", type="filepath"),  
+        gr.Dropdown(choices=sorted_languages, label="Select Language", default='English')
+    ],  
+    outputs=[
+        gr.Textbox(label="Image Text"),
+        gr.Textbox(label="Translated Text")
+    ],,
     title="Image Text Extractor and Translator",
     description=description_image,
 )
