@@ -1,6 +1,7 @@
 import whisper
 import numpy as np
 from pydub import AudioSegment
+from deep_translator import GoogleTranslator
 
 def audio_to_numpy(audio_file_input):
     audio = AudioSegment.from_file(audio_file_input)
@@ -14,4 +15,7 @@ def src_audio_to_eng_translator(audio_file_input):
 
     model = whisper.load_model("turbo")
     result = model.transcribe(audio_data)
-    return result['text']
+
+    translated_text = GoogleTranslator(source='auto', target='en').translate(result["text"])
+    return translated_text
+    # return result['text']
