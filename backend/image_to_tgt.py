@@ -17,5 +17,5 @@ language_dict = {'English': 'eng', 'French': 'fra', 'Odia': 'ori', 'Hindi': 'hin
 def src_image_to_eng_translator(input_image, lang = 'eng'):
     image_text = pytesseract.image_to_string(input_image, lang = language_dict.get(lang, 'eng'))
     
-    translated = GoogleTranslator(source='auto', target='en').translate(text)
+    translated = GoogleTranslator(source='auto', target='en').translate(image_text)
     return image_text, translated
