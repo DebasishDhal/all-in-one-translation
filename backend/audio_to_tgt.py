@@ -1,5 +1,9 @@
 from openai import OpenAI
-client = OpenAI()
+import os
+
+whisper_key = os.getenv("whisper-key")
+client = OpenAI(api_key = whisper_key)
+
 
 def src_audio_to_eng_translator(audio_file_input):
     transcription = client.audio.translations.create(
