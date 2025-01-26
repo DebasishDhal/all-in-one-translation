@@ -1,17 +1,17 @@
-from openai import OpenAI
 import whisper
-import os
+import numpy as np
+from pydub import AudioSegment
 
-# whisper_key = os.getenv("OPENAI_API_KEY")
-# client = OpenAI(api_key = whisper_key)
+def audio_to_numpy(audio_file_input):
+    audio = AudioSegment.from_file(audio_file_input)
+    audio = audio.set_channels(1).set_frame_rate(16000)
+    samples = np.array(audio.get_array_of_samples(), dtype=np.float32)
 
+    return samples / np.iinfo(audio.array_type).max
 
 def src_audio_to_eng_translator(audio_file_input):
-    with open(audio_file_input, "rb") as audio_file:
-            # transcription = client.audio.translations.create(
-            #     model="whisper-1", 
-            #     file=audio_file
-            # )
-        model = whisper.load_model("turbo")
-        result = model.transcribe(audio_file)
-    return result.text
+    audio_data = audio_to_numpy(audio_file_input)
+
+    model = whisper.load_model("turbo")
+    result = model.transcribe(audio_data)
+    return result['text']
