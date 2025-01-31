@@ -15,11 +15,18 @@ txt_interface = gr.Interface(
     ],
     outputs=gr.Textbox(label="Translation"),
     title=heading_txt,
-    description=description_txt
+    description=description_txt,
+    examples=[
+        ["Bonjour, comment ça va ?"],
+        ["Привет, как дела?"],
+        ["Hola, ¿cómo estás?"],
+        ["你好，你怎么样？"],
+        ["Guten Tag! Wie geht's dir?"]
+    ]
 )
 
 heading_image = "Image-to-English"
-description_image = "Upload an image to extract text and translate it to English."
+description_image = "Upload an image to extract text and translate it to English. Make sure to choose language in 'Select Language'"
 
 sorted_languages = sorted(language_dict.keys())
 
@@ -38,10 +45,15 @@ image_interface = gr.Interface(
     ],
     title="Image Text Extractor and Translator",
     description=description_image,
+    examples=[
+        "examples/images/hindi_image_sample.jpg",
+        "examples/images/odia_sample_image.png",
+        "examples/images/russian_sample_image.png"
+    ]
 )
 
 heading_audio = "Audio-to-English"
-description_audio = "Upload an audio file to extract text and translate it to English."
+description_audio = "Upload an audio file to extract text and translate it to English. Takes too much time without GPU."
 
 audio_interface = gr.Interface(
     fn=src_audio_to_eng_translator,
@@ -55,7 +67,10 @@ audio_interface = gr.Interface(
              gr.Textbox(label="Translated text"),
              gr.Textbox(label="Original Language")],
     title=heading_audio,
-    description=description_audio
+    description=description_audio,
+    examples=[
+        "examples/audios/russian_sample_audio.mp3"
+    ]
 )
 combined_interface = gr.TabbedInterface(
     [txt_interface, image_interface, audio_interface],
