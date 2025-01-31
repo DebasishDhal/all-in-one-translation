@@ -15,7 +15,8 @@ def src_audio_to_eng_translator(audio_file_input, model_size = "turbo"):
 
     model = whisper.load_model(model_size)
     result = model.transcribe(audio_data)
-
-    translated_text = GoogleTranslator(source='auto', target='en').translate(result["text"])
-    return translated_text
+    input_text = result["text"]
+    language = result["language"]
+    translated_text = GoogleTranslator(source='auto', target='en').translate(input_text)
+    return input_text, translated_text, language
     # return result['text']

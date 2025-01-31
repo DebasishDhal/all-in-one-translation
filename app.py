@@ -51,7 +51,9 @@ audio_interface = gr.Interface(
             label="Select Whisper Model size",
         )
             ],  
-    outputs=gr.Textbox(label="Translated Text in English"),
+    outputs=[gr.Textbox(label="Original text"), 
+             gr.Textbox(label="Translated text"),
+             gr.Textbox(label="Original Language")],
     title=heading_audio,
     description=description_audio
 )
