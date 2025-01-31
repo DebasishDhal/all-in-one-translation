@@ -10,10 +10,10 @@ def audio_to_numpy(audio_file_input):
 
     return samples / np.iinfo(audio.array_type).max
 
-def src_audio_to_eng_translator(audio_file_input):
+def src_audio_to_eng_translator(audio_file_input, model_size = "turbo"):
     audio_data = audio_to_numpy(audio_file_input)
 
-    model = whisper.load_model("turbo")
+    model = whisper.load_model(model_size)
     result = model.transcribe(audio_data)
 
     translated_text = GoogleTranslator(source='auto', target='en').translate(result["text"])
