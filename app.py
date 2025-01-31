@@ -46,9 +46,9 @@ image_interface = gr.Interface(
     title="Image Text Extractor and Translator",
     description=description_image,
     examples=[
-        "examples/images/hindi_image_sample.jpg",
-        "examples/images/odia_sample_image.png",
-        "examples/images/russian_sample_image.png"
+        ["examples/images/hindi_image_sample.jpg", "Hindi"],
+        ["examples/images/odia_sample_image.png", "Odia"],
+        ["examples/images/russian_sample_image.png", "Russian"]
     ]
 )
 
@@ -69,7 +69,7 @@ audio_interface = gr.Interface(
     title=heading_audio,
     description=description_audio,
     examples=[
-        "examples/audios/russian_sample_audio.mp3"
+        ["examples/audios/russian_sample_audio.mp3", "turbo"]
     ]
 )
 combined_interface = gr.TabbedInterface(
