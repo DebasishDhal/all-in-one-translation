@@ -22,11 +22,11 @@ txt_interface = gr.Interface(
     title=heading_txt,
     description=description_txt,
     examples=[
-        ["Bonjour, comment ça va ?"],
-        ["Привет, как дела?"],
-        ["Hola, ¿cómo estás?"],
-        ["你好，你怎么样？"],
-        ["Guten Tag! Wie geht's dir?"]
+        ["Bonjour, comment ça va ?", "Hindi"],
+        ["Привет, как дела?", "English"],
+        ["Hola, ¿cómo estás?", "Odia (Oriya)"],
+        ["你好，你怎么样", "English"],
+        ["Guten Tag! Wie geht's dir?", "English"]
     ]
 )
 
