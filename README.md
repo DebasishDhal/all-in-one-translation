@@ -9,13 +9,29 @@ app_file: app.py
 pinned: false
 short_description: Convert text/image/audio/video from src language to English
 ---
+****************************
+<p align="center">
+    Liked the setup? Put a like on top left, it takes only 2 seconds.
+</p>
 
-The space consists of 3/4 parts: - 
+****************************
+Replication
+ - Requirements
+    - Free API Key from https://detectlanguage.com/ for automatic language detection from text.
+    - GPU for `Whisper` model inference. It's slower in CPU.
+ - Notes
+    - `pytesseract` library (For image-to-text) is easier to install in linux machines.
+    - If you have GPU, you can go for more sophisticated image-to-text models.
+    - The image-to-text setup works best for non-decorative and normal sized fonts.
+*******
 
-- Text translator - Input (Text), Output (Translated text in English)
-- Image translator - Input (Image with any text), Output (English Translated text version of the text in the image)
-- Audio translator - Input (Audio in any language), Output (English Translated text version of the audio)
-- Video translator - Input (Video), Output (English Translated text version of the audio) [Not yet implemented]
+The space consists of 3-4 parts: - 
+
+- Text translator - Input (Input Text, Target language), Output (Translated text in target language, Source language name)
+- Image translator - Input (Image with any text, Source language, Target language), Output (Image text in source language, Image text translated to target language)
+- Audio translator - Input (Audio in any language, Model size, Target language), Output (Transcribed original text, Transcribed text translated to target language, Original language name)
+- Video translator - Input (Video, Model size, Target language), Output (Translated text version of the audio) [Not yet implemented]
+
 ********************************************************
 
 Demo
