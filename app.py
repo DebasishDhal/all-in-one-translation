@@ -74,7 +74,7 @@ audio_interface = gr.Interface(
     title=heading_audio,
     description=description_audio,
     examples=[
-        ["examples/audios/russian_sample_audio.mp3", "turbo"]
+        ["examples/audios/russian_sample_audio.mp3", "turbo", "English"]
     ]
 )
 combined_interface = gr.TabbedInterface(
