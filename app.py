@@ -1,6 +1,5 @@
 import gradio as gr
-
-from backend.text_to_tgt import src_txt_to_eng_translator
+from backend.text_to_tgt import src_txt_to_eng_translator, formatted_languages
 from backend.audio_to_tgt import src_audio_to_eng_translator
 from backend.image_to_tgt import src_image_to_eng_translator, language_dict
 # from backend.video_to_tgt import src_video_to_eng_translator
@@ -8,10 +7,13 @@ from backend.image_to_tgt import src_image_to_eng_translator, language_dict
 heading_txt = "Text-to-English"
 description_txt = '''Enter text in any language, and get the translation in English.'''
 
+language_list = formatted_languages.keys()
+
 txt_interface = gr.Interface(
     fn=src_txt_to_eng_translator,
     inputs=[
         gr.Textbox(label="Text Input"),
+        gr.Dropdown(choices=language_list, label="Select Target Language, Default: English", value="English", interactive=True)
     ],
     outputs=gr.Textbox(label="Translation"),
     title=heading_txt,
