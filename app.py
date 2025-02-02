@@ -1,7 +1,7 @@
 import gradio as gr
 from backend.text_to_tgt import src_txt_to_eng_translator, formatted_languages
 from backend.audio_to_tgt import src_audio_to_eng_translator
-from backend.image_to_tgt import src_image_to_eng_translator, language_dict
+from backend.image_to_tgt import src_image_to_eng_translator, pytesseract_language_dict
 # from backend.video_to_tgt import src_video_to_eng_translator
 
 heading_txt = "Text-to-English"
@@ -33,7 +33,7 @@ txt_interface = gr.Interface(
 heading_image = "Image-to-English"
 description_image = "Upload an image to extract text and translate it to English. Make sure to choose language in 'Select Language'"
 
-sorted_languages = sorted(language_dict.keys())
+sorted_languages = sorted(pytesseract_language_dict.keys())
 
 image_interface = gr.Interface(
     fn=src_image_to_eng_translator,
