@@ -66,7 +66,8 @@ audio_interface = gr.Interface(
             gr.Dropdown(
             choices=["turbo", "base", "tiny", "small", "medium", "large"],
             label="Select Whisper Model size",
-        )
+        ),
+            gr.Dropdown(choices=language_list, label="Select Target Language", interactive=True)
             ],  
     outputs=[gr.Textbox(label="Original text"), 
              gr.Textbox(label="Translated text"),
