@@ -62,12 +62,20 @@ description_audio = "Upload an audio file to extract text and translate it to En
 
 audio_interface = gr.Interface(
     fn=src_audio_to_eng_translator,
-    inputs=[gr.Audio(label="Upload an Audio file", type="filepath"),
+    inputs=[
+            gr.Audio(
+                label="Upload an Audio file", 
+                type="filepath"
+            ),
             gr.Dropdown(
-            choices=["turbo", "base", "tiny", "small", "medium", "large"],
-            label="Select Whisper Model size",
-        ),
-            gr.Dropdown(choices=language_list, label="Select Target Language", interactive=True)
+                choices=["turbo", "base", "tiny", "small", "medium", "large"],
+                label="Select Whisper Model size",
+            ),
+            gr.Dropdown(
+                choices=language_list, 
+                label="Select Target Language", 
+                interactive=True
+            )
             ],  
     outputs=[gr.Textbox(label="Original text"), 
              gr.Textbox(label="Translated text"),
