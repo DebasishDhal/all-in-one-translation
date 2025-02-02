@@ -15,7 +15,10 @@ txt_interface = gr.Interface(
         gr.Textbox(label="Text Input"),
         gr.Dropdown(choices=language_list, label="Select Target Language, Default: English", value="English", interactive=True)
     ],
-    outputs=gr.Textbox(label="Translation"),
+    outputs=[
+            gr.Textbox(label="Translation"),
+            gr.Textbox(label="Source Language")
+             ],
     title=heading_txt,
     description=description_txt,
     examples=[
