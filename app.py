@@ -55,9 +55,9 @@ image_interface = gr.Interface(
     title="Image Text Extractor and Translator",
     description=description_image,
     examples=[
-        ["examples/images/hindi_image_sample.jpg", "Hindi"],
-        ["examples/images/odia_sample_image.png", "Odia"],
-        ["examples/images/russian_sample_image.png", "Russian"]
+        ["examples/images/hindi_image_sample.jpg", "Hindi", "English"],
+        ["examples/images/odia_sample_image.png", "Odia", "English"],
+        ["examples/images/russian_sample_image.png", "Russian", "English"]
     ]
 )
 
