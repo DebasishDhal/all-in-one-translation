@@ -4,8 +4,8 @@ from backend.audio_to_tgt import src_audio_to_eng_translator
 from backend.image_to_tgt import src_image_to_eng_translator, pytesseract_language_dict
 # from backend.video_to_tgt import src_video_to_eng_translator
 
-heading_txt = "Text-to-English"
-description_txt = '''Enter text in any language, and get the translation in English.'''
+heading_txt = "Text-to-TranslatedText"
+description_txt = '''Enter text in any language, and get the translation in any language.'''
 
 language_list = formatted_languages.keys()
 
@@ -30,8 +30,8 @@ txt_interface = gr.Interface(
     ]
 )
 
-heading_image = "Image-to-English"
-description_image = "Upload an image to extract text and translate it to English. Make sure to choose language in 'Select Language'"
+heading_image = "Image-to-TranslatedText"
+description_image = "Upload an image to extract text and translate it to any language. Make sure to choose language in 'Select Language'"
 
 sorted_languages = sorted(pytesseract_language_dict.keys())
 
@@ -61,8 +61,8 @@ image_interface = gr.Interface(
     ]
 )
 
-heading_audio = "Audio-to-English"
-description_audio = "Upload an audio file to extract text and translate it to English. Takes too much time without GPU."
+heading_audio = "Audio-to-TranslatedText"
+description_audio = "Upload an audio file to extract text and translate it to any language. Takes too much time without GPU."
 
 audio_interface = gr.Interface(
     fn=src_audio_to_eng_translator,
