@@ -13,7 +13,7 @@ txt_interface = gr.Interface(
     fn=src_txt_to_eng_translator,
     inputs=[
         gr.Textbox(label="Text Input"),
-        gr.Dropdown(choices=language_list, label="Select Target Language, Default: English", value="English", interactive=True)
+        gr.Dropdown(choices=language_list, label="Select Target Language", interactive=True)
     ],
     outputs=[
             gr.Textbox(label="Translation"),
