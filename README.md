@@ -14,6 +14,9 @@ short_description: Convert text/image/audio/video from src language to English
     Liked the setup? Put a like on top left, it takes only 2 seconds.
 </p>
 
+# Logs 
+- 27/05/2025 - This app receieved bulk usage, in terms of data size. 63 requests with input text of size 3.3MB. The `https://detectlanguage.com/` API can only support 1MB/day. My personal API key was suspeded, making this app dysfunctional.
+
 ****************************
 Replication
  - Requirements
