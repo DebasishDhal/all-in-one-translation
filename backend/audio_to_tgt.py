@@ -9,7 +9,7 @@ available_languages = GoogleTranslator().get_supported_languages(as_dict=True)
 formatted_languages = {key.title(): value for key, value in available_languages.items()}
 formatted_codes = {value: key.title() for key, value in available_languages.items()}
 
-lang_detect_key = os.getenv("detect_language_api_key")
+# lang_detect_key = os.getenv("detect_language_api_key")
 
 def audio_to_numpy(audio_file_input):
     audio = AudioSegment.from_file(audio_file_input)
