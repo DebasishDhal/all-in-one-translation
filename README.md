@@ -16,7 +16,7 @@ short_description: Convert text/image/audio/video from src language to English
 
 # Logs 
 - 27/05/2025 - This app receieved bulk usage, in terms of data size. 63 requests with input text of size 3.3MB. The `https://detectlanguage.com/` API can only support 1MB/day. My personal API key was suspeded, making this app dysfunctional.
-
+- 28/05/2025 - I have removed the need for an external API. Using `langdetect` library for the same purpose now. No limitations of usage (Theoretically).
 ****************************
 Replication
  - Requirements
